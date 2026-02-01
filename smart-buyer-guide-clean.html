@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Smart Buyer's Guide to Yelahanka | Godrej Properties</title>
+    <style>
+        /* --- FONTS --- */
+        @font-face {
+            font-family: 'CeraGodrejInterio';
+            src: url('CeraGodrejInterio-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'CeraGodrejInterio';
+            src: url('CeraGodrejInterio-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* --- CSS VARIABLES --- */
+        :root {
+            --green-deep: #1F7A4D;
+            --green-light: #2A9D5C;
+            --yellow-soft: #F4D35E;
+            --yellow-glow: #F9E88A;
+            --charcoal: #1C1C1C;
+            --charcoal-light: #2D2D2D;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --gray-soft: #F5F5F5;
+            --gray-text: #6B7280;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(31, 122, 77, 0.15);
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'CeraGodrejInterio', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--off-white);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- STICKY NAVIGATION --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(31, 122, 77, 0.1);
+            padding: 0 24px;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .nav-logo {
+            height: 70px;
+            max-height: 70px;
+            width: auto;
+            object-fit: contain;
+            margin-left: -12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--green-deep);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--green-deep);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--green-deep);
+            color: var(--white) !important;
+            padding: 10px 20px !important;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-light) !important;
+            color: var(--white) !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--charcoal);
+            margin: 6px 0;
+            transition: var(--transition-smooth);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 24px 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(31, 122, 77, 0.03) 0%, 
+                rgba(244, 211, 94, 0.05) 50%,
+                rgba(31, 122, 77, 0.02) 100%);
+            z-index: -2;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(31, 122, 77, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(244, 211, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(31, 122, 77, 0.03) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(31, 122, 77, 0.1);
+            color: var(--green-deep);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            line-height: 1.15;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.1s forwards;
+            opacity: 0;
+        }
+
+        .hero-title .highlight {
+            color: var(--green-deep);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
+            color: var(--gray-text);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green-deep);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: var(--radius-md);
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 15px rgba(31, 122, 77, 0.3);
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta:hover {
+            background: var(--green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(31, 122, 77, 0.4);
+        }
+
+        .hero-cta svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-text);
+            font-size: 0.85rem;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            opacity: 0.6;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- SECTION COMMON --- */
+        section {
+            padding: 80px 24px;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(31, 122, 77, 0.1);
+            color: var(--green-deep);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- SMART BUYER STEPS SECTION --- */
+        #smart-buyer-steps {
+            background: var(--white);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .step-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(31, 122, 77, 0.15);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .step-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-light) 100%);
+            color: var(--white);
+            border-radius: 50%;
+            padding: 12px;
+        }
+
+        .step-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+            fill: none;
+        }
+
+        .step-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1.3;
+            padding-top: 8px;
+        }
+
+        .step-description {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            line-height: 1.65;
+        }
+
+        .step-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(244, 211, 94, 0.2);
+            color: var(--charcoal);
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+
+        .step-highlight svg {
+            width: 16px;
+            height: 16px;
+            color: var(--green-deep);
+        }
+
+        /* --- CTA SECTION --- */
+        .cta-section {
+            background: linear-gradient(135deg, var(--green-deep) 0%, #165C3A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 10% 90%, rgba(244, 211, 94, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--yellow-soft);
+            color: var(--charcoal);
+            padding: 18px 36px;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background: var(--yellow-glow);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--yellow-soft);
+            text-decoration: none;
+        }
+
+        /* --- MOBILE STYLES --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+                min-height: auto;
+            }
+
+            .hero-scroll-indicator {
+                display: none;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step-card {
+                padding: 24px;
+            }
+
+            .step-title {
+                font-size: 1.05rem;
+            }
+
+            .step-description {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 16px 28px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .step-icon {
+                width: 40px;
+                height: 40px;
+                padding: 10px;
+            }
+
+            .step-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .step-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <img src="GPL Logo-03.jpg" alt="Godrej Properties" class="nav-logo">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#smart-buyer-steps">Smart Buyer Steps</a></li>
+                <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Yelahanka, North Bangalore
+            </div>
+            <h1 class="hero-title">
+                Steps Every Smart Buyer Takes Before Choosing a Home in <span class="highlight">Yelahanka</span>
+            </h1>
+            <p class="hero-subtitle">
+                Buying a home is one of life's biggest milestones. But with excitement comes responsibility. Smart buyers don't just look at glossy brochures; they dig deeper into the data, the location, and the future potential.
+            </p>
+            <a href="#smart-buyer-steps" class="hero-cta">
+                Begin Your Journey
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- SMART BUYER STEPS -->
+    <section id="smart-buyer-steps">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Your Checklist</span>
+            </div>
+
+            <div class="steps-grid">
+                
+                <!-- Step 1: Verify RERA Registration -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Shield/Checkmark Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Verify RERA Registration</div>
+                    </div>
+                    <p class="step-description">Start with the basics. Ensure the project is registered under RERA. This Act ensures transparency, accountability, and grievance redressal. It is your first and most important safeguard against delays and defaults.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        Your first and most important safeguard
+                    </div>
+                </div>
+
+                <!-- Step 2: Know Your True Carpet Area -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Ruler/Measuring Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+                                <path d="M3 7h4M3 12h2M3 17h4M21 7h-4M21 12h-2M21 17h-4"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Know Your True Carpet Area</div>
+                    </div>
+                    <p class="step-description">Don't be misled by "Super Built-up Area" or "Saleable Area." Focus on the Carpet Area, the actual net usable space inside your walls. This is the space you live in, and this is what truly determines the value of your purchase.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                        </svg>
+                        The space you live in determines true value
+                    </div>
+                </div>
+
+                <!-- Step 3: Analyze the Growth Trajectory -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Chart/Growth Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                                <polyline points="17 6 23 6 23 12"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Analyze the Growth Trajectory (The 25.3%* Rule)</div>
+                    </div>
+                    <p class="step-description">Smart buyers don't just buy a home; they buy an asset. Look at the historical data. Yelahanka has quietly transformed, recording a massive 25.3%* growth in real estate value recently. While other markets saturate, Yelahanka is entering its "Second Wave" of appreciation, fueled by infrastructure maturity.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                        25.3%* growth | Second Wave of appreciation
+                    </div>
+                </div>
+
+                <!-- Step 4: Check the Lung Power -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Leaf/Wind Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M6.76 6.76a8 8 0 0 1 11.31 0l1.42 1.42a2 2 0 0 1 0 2.83l-7.07 7.07a2 2 0 0 1-2.83 0L8.17 16.66a8 8 0 0 1 0-11.31l1.42-1.42a2 2 0 0 1 2.83 0z"/>
+                                <path d="M2 22l4-4"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Check the "Lung Power" (AQI Advantage)</div>
+                    </div>
+                    <p class="step-description">In a city struggling with pollution, the most luxurious amenity is fresh air. Unlike the congested CBD, Yelahanka benefits from a massive protected green zone (Defense land & GKVK). This keeps the AQI consistently healthier and the micro-climate often 2°C cooler than central Bangalore. Ensure your future home is within this "Green Shield."</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 22h20L12 2z"/>
+                        </svg>
+                        2°C cooler | Green Shield advantage
+                    </div>
+                </div>
+
+                <!-- Step 5: Define Your 15-Minute Ecosystem -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Compass/Location Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Define Your "15-Minute Ecosystem"</div>
+                    </div>
+                    <p class="step-description">Smart buyers look at what lies outside the gates as much as what is inside. In Yelahanka, you don't need to travel hours for essentials. Check if your project connects to these hubs:<br><br><strong>Education:</strong> NITTE Meenakshi, BMS Institute, DPS, Ryan International.<br><strong>Healthcare:</strong> Aster CMI, Manipal Hospital, Cytecare Cancer Hospital.<br><strong>Lifestyle:</strong> Mall of Asia, RMZ Galleria, Bhartiya Mall of Bengaluru.<br><strong>Work Hubs:</strong> Manyata Tech Park, L&T Tech Park, and the upcoming Airport City.<br><strong>Connectivity:</strong> The 15-minute signal-free run to KIAL and the upcoming Blue Line Metro.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        15-min signal-free run to KIAL
+                    </div>
+                </div>
+
+                <!-- Step 6: Decide on Construction Stage -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Building/Construction Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+                                <path d="M9 22V12h6v10M9 6h.01M15 6h.01M9 10h.01M15 10h.01"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Decide on Construction Stage (Risk vs. Reward)</div>
+                    </div>
+                    <p class="step-description">Weigh the pros and cons of Under-Construction vs. Ready-to-Move:<br><br><strong>Cost:</strong> Under-construction homes are often priced lower, offering an immediate paper profit as the project nears completion.<br><strong>Tax:</strong> GST (12%) applies to under-construction units, but they often yield higher ROI.<br><strong>Quality Check:</strong> Buying early allows you to monitor the construction quality and materials (like Mivan technology) from the ground up.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                        Early buyers can monitor quality
+                    </div>
+                </div>
+
+                <!-- Step 7: Look for Next-Gen Greenery -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Tree/Plant Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M12 22V8"/>
+                                <path d="M5 12h14"/>
+                                <path d="M12 2a4 4 0 0 0-4 4c0 1.5.8 2.8 2 3.4L12 8l2-1.4c1.2-.6 2-1.9 2-3.4a4 4 0 0 0-4-4z"/>
+                                <path d="M8 22h8"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Look for "Next-Gen" Greenery</div>
+                    </div>
+                    <p class="step-description">Don't settle for basic landscaping. Modern wellness homes are designed around curated, purpose-led green spaces - such as therapeutic walking trails, shaded groves, and biodiversity-focused landscapes. Projects with thoughtful, IGBC-aligned landscape planning help lower ambient temperatures and support better mental well-being for your family.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        IGBC-aligned for mental well-being
+                    </div>
+                </div>
+
+                <!-- Step 8: Evaluate Developer's Track Record -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Star/Award Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Evaluate the Developer's Track Record</div>
+                    </div>
+                    <p class="step-description">History repeats itself. Study the developer's past projects. Did they deliver on time? How is the maintenance years later? Financial stability and a strong portfolio are the best indicators that your home will be delivered as promised.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                        Godrej: 127+ years of trust
+                    </div>
+                </div>
+
+                <!-- Step 9: Assess the Amenities that Matter -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Dumbbell/Fitness Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M6.5 6.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                                <path d="M17.5 13.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                                <path d="M14 8.5c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/>
+                                <path d="M4 13.5c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+                                <line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Assess the Amenities that Matter</div>
+                    </div>
+                    <p class="step-description">Look beyond the standard swimming pool. Does the project have a fully equipped clubhouse, co-working spaces for the hybrid era, and dedicated sports zones? In a self-sustained hub like Yelahanka, your community amenities become your daily lifestyle.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        Amenities become your daily lifestyle
+                    </div>
+                </div>
+
+                <!-- Step 10: Keep Your Documents & Finances Ready -->
+                <div class="step-card">
+                    <div class="step-header">
+                        <div class="step-icon">
+                            <!-- Document/Wallet Icon -->
+                            <svg viewBox="0 0 24 24" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <div class="step-title">Keep Your Documents & Finances Ready</div>
+                    </div>
+                    <p class="step-description">Before you book, ensure your financial health is in order. Keep your PAN card, Aadhaar, and a cancelled cheque ready. Remember, tax benefits under Section 24 and 80C only apply if possession is taken within the stipulated time, so plan your finances with a clear budget in mind.</p>
+                    <div class="step-highlight">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        Tax benefits under Section 24 & 80C
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="contact">
+        <div class="cta-pattern"></div>
+        <div class="section-container">
+            <div class="cta-content">
+                <h2>Ready to Make the Smart Move?</h2>
+                <p>Connect with our team for personalized guidance on your home-buying journey in Yelahanka.</p>
+                <a href="#" class="cta-button">
+                    Explore Homes the Smart Way
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Godrej Properties Limited. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe step cards
+        document.querySelectorAll('.step-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity 0.5s ease ${index * 0.05}s, transform 0.5s ease ${index * 0.05}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
