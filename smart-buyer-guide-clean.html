@@ -23,19 +23,23 @@
 
         /* --- CSS VARIABLES --- */
         :root {
-            --green-deep: #1F7A4D;
-            --green-light: #2A9D5C;
-            --yellow-soft: #F4D35E;
-            --yellow-glow: #F9E88A;
-            --charcoal: #1C1C1C;
-            --charcoal-light: #2D2D2D;
+            --bg-color: #FFFFFF;
+            --text-dark: #111827;
+            --text-muted: #6B7280;
+            --accent-color: #111827;
+            --accent-light: #374151;
+            --yellow-soft: #F4D03F;
+            --yellow-glow: #FBBF24;
+            --charcoal: #111827;
+            --charcoal-light: #374151;
             --white: #FFFFFF;
-            --off-white: #FAFAFA;
-            --gray-soft: #F5F5F5;
+            --off-white: #FFFFFF;
+            --gray-soft: #F9FAFB;
             --gray-text: #6B7280;
-            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 8px 30px rgba(31, 122, 77, 0.15);
-            --radius-lg: 20px;
+            --border-color: #E5E7EB;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --radius-lg: 24px;
             --radius-md: 12px;
             --radius-sm: 8px;
             --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -53,7 +57,7 @@
         }
 
         body {
-            font-family: 'CeraGodrejInterio', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'CeraGodrejInterio', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--off-white);
             color: var(--charcoal);
             line-height: 1.6;
@@ -70,7 +74,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(31, 122, 77, 0.1);
+            border-bottom: 1px solid var(--border-color);
             padding: 0 24px;
             transition: var(--transition-smooth);
         }
@@ -119,12 +123,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--green-deep);
+            background: var(--charcoal);
             transition: width 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--green-deep);
+            color: var(--charcoal);
         }
 
         .nav-links a:hover::after {
@@ -132,7 +136,7 @@
         }
 
         .nav-cta {
-            background: var(--green-deep);
+            background: var(--charcoal);
             color: var(--white) !important;
             padding: 10px 20px !important;
             border-radius: var(--radius-sm);
@@ -144,7 +148,7 @@
         }
 
         .nav-cta:hover {
-            background: var(--green-light) !important;
+            background: var(--charcoal-light) !important;
             color: var(--white) !important;
         }
 
@@ -182,10 +186,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(31, 122, 77, 0.03) 0%, 
-                rgba(244, 211, 94, 0.05) 50%,
-                rgba(31, 122, 77, 0.02) 100%);
+            background: #FFFFFF;
             z-index: -2;
         }
 
@@ -196,9 +197,8 @@
             right: 0;
             bottom: 0;
             background-image: 
-                radial-gradient(circle at 20% 80%, rgba(31, 122, 77, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(244, 211, 94, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(31, 122, 77, 0.03) 0%, transparent 70%);
+                radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
             z-index: -1;
         }
 
@@ -211,8 +211,8 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(31, 122, 77, 0.1);
-            color: var(--green-deep);
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--charcoal);
             padding: 10px 20px;
             border-radius: 50px;
             font-size: 0.9rem;
@@ -237,7 +237,10 @@
         }
 
         .hero-title .highlight {
-            color: var(--green-deep);
+            color: var(--charcoal);
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 4px;
         }
 
         .hero-subtitle {
@@ -254,7 +257,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--green-deep);
+            background: var(--charcoal);
             color: var(--white);
             padding: 16px 32px;
             border-radius: var(--radius-md);
@@ -262,15 +265,15 @@
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition-smooth);
-            box-shadow: 0 4px 15px rgba(31, 122, 77, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             animation: fadeInUp 0.8s ease 0.3s forwards;
             opacity: 0;
         }
 
         .hero-cta:hover {
-            background: var(--green-light);
+            background: var(--charcoal-light);
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(31, 122, 77, 0.4);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
         }
 
         .hero-cta svg {
@@ -337,8 +340,8 @@
 
         .section-label {
             display: inline-block;
-            background: rgba(31, 122, 77, 0.1);
-            color: var(--green-deep);
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--charcoal);
             padding: 8px 16px;
             border-radius: 50px;
             font-size: 0.85rem;
@@ -385,7 +388,7 @@
         .step-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
-            border-color: rgba(31, 122, 77, 0.15);
+            border-color: rgba(0, 0, 0, 0.1);
         }
 
         .step-header {
@@ -402,7 +405,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-light) 100%);
+            background: var(--charcoal);
             color: var(--white);
             border-radius: 50%;
             padding: 12px;
@@ -433,7 +436,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(244, 211, 94, 0.2);
+            background: rgba(0, 0, 0, 0.05);
             color: var(--charcoal);
             padding: 8px 14px;
             border-radius: var(--radius-sm);
@@ -445,72 +448,7 @@
         .step-highlight svg {
             width: 16px;
             height: 16px;
-            color: var(--green-deep);
-        }
-
-        /* --- CTA SECTION --- */
-        .cta-section {
-            background: linear-gradient(135deg, var(--green-deep) 0%, #165C3A 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 10% 90%, rgba(244, 211, 94, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
-            pointer-events: none;
-        }
-
-        .cta-content {
-            position: relative;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-
-        .cta-content p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 32px;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--yellow-soft);
             color: var(--charcoal);
-            padding: 18px 36px;
-            border-radius: var(--radius-md);
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            background: var(--yellow-glow);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .cta-button svg {
-            width: 20px;
-            height: 20px;
         }
 
         /* --- FOOTER --- */
@@ -597,11 +535,6 @@
             .step-description {
                 font-size: 0.9rem;
             }
-
-            .cta-button {
-                padding: 16px 28px;
-                font-size: 1rem;
-            }
         }
 
         @media (max-width: 380px) {
@@ -630,7 +563,6 @@
             <img src="GPL Logo-03.jpg" alt="Godrej Properties" class="nav-logo">
             <ul class="nav-links" id="navLinks">
                 <li><a href="#smart-buyer-steps">Smart Buyer Steps</a></li>
-                <li><a href="#contact" class="nav-cta">Enquire Now</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
@@ -653,7 +585,7 @@
                 Yelahanka, North Bangalore
             </div>
             <h1 class="hero-title">
-                Steps Every Smart Buyer Takes Before Choosing a Home in <span class="highlight">Yelahanka</span>
+                Steps Every Smart Buyer Takes Before Choosing a Home in Yelahanka
             </h1>
             <p class="hero-subtitle">
                 Buying a home is one of life's biggest milestones. But with excitement comes responsibility. Smart buyers don't just look at glossy brochures; they dig deeper into the data, the location, and the future potential.
@@ -905,23 +837,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section class="cta-section" id="contact">
-        <div class="cta-pattern"></div>
-        <div class="section-container">
-            <div class="cta-content">
-                <h2>Ready to Make the Smart Move?</h2>
-                <p>Connect with our team for personalized guidance on your home-buying journey in Yelahanka.</p>
-                <a href="#" class="cta-button">
-                    Explore Homes the Smart Way
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
             </div>
         </div>
     </section>
