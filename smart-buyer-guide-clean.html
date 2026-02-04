@@ -92,12 +92,28 @@
             height: 80px;
         }
 
+        .nav-logo-wrapper {
+            height: 60px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .nav-logo {
-            height: 70px;
-            max-height: 70px;
+            height: 90px;
             width: auto;
             object-fit: contain;
-            margin-left: -12px;
+            transform: scale(1.6);
+            transform-origin: center center;
+        }
+
+        .nav-brand {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -560,10 +576,10 @@
     <!-- NAVIGATION -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <img src="GPL Logo-03.jpg" alt="Godrej Properties" class="nav-logo">
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#smart-buyer-steps">Smart Buyer Steps</a></li>
-            </ul>
+            <span class="nav-brand">Smart Buying Guide</span>
+            <div class="nav-logo-wrapper">
+                <img src="GPL Logo-03.jpg" alt="Godrej Properties" class="nav-logo">
+            </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -591,7 +607,7 @@
                 Buying a home is one of life's biggest milestones. But with excitement comes responsibility. Smart buyers don't just look at glossy brochures; they dig deeper into the data, the location, and the future potential.
             </p>
             <a href="#smart-buyer-steps" class="hero-cta">
-                Begin Your Journey
+                BEGIN YOUR JOURNEY
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -618,7 +634,7 @@
                                 <polyline points="9 12 11 14 15 10"/>
                             </svg>
                         </div>
-                        <div class="step-title">Verify RERA Registration</div>
+                        <div class="step-title">VERIFY RERA REGISTRATION</div>
                     </div>
                     <p class="step-description">Start with the basics. Ensure the project is registered under RERA. This Act ensures transparency, accountability, and grievance redressal. It is your first and most important safeguard against delays and defaults.</p>
                     <div class="step-highlight">
@@ -626,7 +642,7 @@
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                             <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
-                        Your first and most important safeguard
+                        YOUR FIRST AND MOST IMPORTANT SAFEGUARD
                     </div>
                 </div>
 
@@ -640,7 +656,7 @@
                                 <path d="M3 7h4M3 12h2M3 17h4M21 7h-4M21 12h-2M21 17h-4"/>
                             </svg>
                         </div>
-                        <div class="step-title">Know Your True Carpet Area</div>
+                        <div class="step-title">KNOW YOUR TRUE CARPET AREA</div>
                     </div>
                     <p class="step-description">Don't be misled by "Super Built-up Area" or "Saleable Area." Focus on the Carpet Area, the actual net usable space inside your walls. This is the space you live in, and this is what truly determines the value of your purchase.</p>
                     <div class="step-highlight">
@@ -648,7 +664,7 @@
                             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                             <line x1="3" y1="9" x2="21" y2="9"/>
                         </svg>
-                        The space you live in determines true value
+                        THE SPACE YOU LIVE IN DETERMINES TRUE VALUE
                     </div>
                 </div>
 
@@ -662,7 +678,7 @@
                                 <polyline points="17 6 23 6 23 12"/>
                             </svg>
                         </div>
-                        <div class="step-title">Analyze the Growth Trajectory (The 25.3%* Rule)</div>
+                        <div class="step-title">ANALYZE THE GROWTH TRAJECTORY (THE 25.3%* RULE)</div>
                     </div>
                     <p class="step-description">Smart buyers don't just buy a home; they buy an asset. Look at the historical data. Yelahanka has quietly transformed, recording a massive 25.3%* growth in real estate value recently. While other markets saturate, Yelahanka is entering its "Second Wave" of appreciation, fueled by infrastructure maturity.</p>
                     <div class="step-highlight">
@@ -670,7 +686,7 @@
                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
                             <polyline points="17 6 23 6 23 12"/>
                         </svg>
-                        25.3%* growth | Second Wave of appreciation
+                        25.3%* GROWTH | SECOND WAVE OF APPRECIATION
                     </div>
                 </div>
 
@@ -684,14 +700,14 @@
                                 <path d="M2 22l4-4"/>
                             </svg>
                         </div>
-                        <div class="step-title">Check the "Lung Power" (AQI Advantage)</div>
+                        <div class="step-title">CHECK THE "LUNG POWER" (AQI ADVANTAGE)</div>
                     </div>
                     <p class="step-description">In a city struggling with pollution, the most luxurious amenity is fresh air. Unlike the congested CBD, Yelahanka benefits from a massive protected green zone (Defense land & GKVK). This keeps the AQI consistently healthier and the micro-climate often 2°C cooler than central Bangalore. Ensure your future home is within this "Green Shield."</p>
                     <div class="step-highlight">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 22h20L12 2z"/>
                         </svg>
-                        2°C cooler | Green Shield advantage
+                        2°C COOLER | GREEN SHIELD ADVANTAGE
                     </div>
                 </div>
 
@@ -705,7 +721,7 @@
                                 <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
                             </svg>
                         </div>
-                        <div class="step-title">Define Your "15-Minute Ecosystem"</div>
+                        <div class="step-title">DEFINE YOUR "15-MINUTE ECOSYSTEM"</div>
                     </div>
                     <p class="step-description">Smart buyers look at what lies outside the gates as much as what is inside. In Yelahanka, you don't need to travel hours for essentials. Check if your project connects to these hubs:<br><br><strong>Education:</strong> NITTE Meenakshi, BMS Institute, DPS, Ryan International.<br><strong>Healthcare:</strong> Aster CMI, Manipal Hospital, Cytecare Cancer Hospital.<br><strong>Lifestyle:</strong> Mall of Asia, RMZ Galleria, Bhartiya Mall of Bengaluru.<br><strong>Work Hubs:</strong> Manyata Tech Park, L&T Tech Park, and the upcoming Airport City.<br><strong>Connectivity:</strong> The 15-minute signal-free run to KIAL and the upcoming Blue Line Metro.</p>
                     <div class="step-highlight">
@@ -713,7 +729,7 @@
                             <circle cx="12" cy="12" r="10"/>
                             <polyline points="12 6 12 12 16 14"/>
                         </svg>
-                        15-min signal-free run to KIAL
+                        15-MINUTE SIGNAL-FREE RUN TO KEMPEGOWDA INTERNATIONAL AIRPORT
                     </div>
                 </div>
 
@@ -727,7 +743,7 @@
                                 <path d="M9 22V12h6v10M9 6h.01M15 6h.01M9 10h.01M15 10h.01"/>
                             </svg>
                         </div>
-                        <div class="step-title">Decide on Construction Stage (Risk vs. Reward)</div>
+                        <div class="step-title">DECIDE ON CONSTRUCTION STAGE (RISK VS. REWARD)</div>
                     </div>
                     <p class="step-description">Weigh the pros and cons of Under-Construction vs. Ready-to-Move:<br><br><strong>Cost:</strong> Under-construction homes are often priced lower, offering an immediate paper profit as the project nears completion.<br><strong>Tax:</strong> GST (12%) applies to under-construction units, but they often yield higher ROI.<br><strong>Quality Check:</strong> Buying early allows you to monitor the construction quality and materials (like Mivan technology) from the ground up.</p>
                     <div class="step-highlight">
@@ -735,7 +751,7 @@
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                             <polyline points="14 2 14 8 20 8"/>
                         </svg>
-                        Early buyers can monitor quality
+                        EARLY BUYERS CAN MONITOR QUALITY
                     </div>
                 </div>
 
@@ -751,7 +767,7 @@
                                 <path d="M8 22h8"/>
                             </svg>
                         </div>
-                        <div class="step-title">Look for "Next-Gen" Greenery</div>
+                        <div class="step-title">LOOK FOR "NEXT-GEN" GREENERY</div>
                     </div>
                     <p class="step-description">Don't settle for basic landscaping. Modern wellness homes are designed around curated, purpose-led green spaces - such as therapeutic walking trails, shaded groves, and biodiversity-focused landscapes. Projects with thoughtful, IGBC-aligned landscape planning help lower ambient temperatures and support better mental well-being for your family.</p>
                     <div class="step-highlight">
@@ -759,7 +775,7 @@
                             <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
-                        IGBC-aligned for mental well-being
+                        IGBC-ALIGNED FOR MENTAL WELL-BEING
                     </div>
                 </div>
 
@@ -772,7 +788,7 @@
                                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                             </svg>
                         </div>
-                        <div class="step-title">Evaluate the Developer's Track Record</div>
+                        <div class="step-title">EVALUATE THE DEVELOPER'S TRACK RECORD</div>
                     </div>
                     <p class="step-description">History repeats itself. Study the developer's past projects. Did they deliver on time? How is the maintenance years later? Financial stability and a strong portfolio are the best indicators that your home will be delivered as promised.</p>
                     <div class="step-highlight">
@@ -781,7 +797,7 @@
                             <path d="M2 17l10 5 10-5"/>
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
-                        Godrej: 127+ years of trust
+                        GODREJ: 127+ YEARS OF TRUST
                     </div>
                 </div>
 
@@ -798,15 +814,15 @@
                                 <line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/>
                             </svg>
                         </div>
-                        <div class="step-title">Assess the Amenities that Matter</div>
+                        <div class="step-title">ASSESS THE AMENITIES THAT MATTER</div>
                     </div>
-                    <p class="step-description">Look beyond the standard swimming pool. Does the project have a fully equipped clubhouse, co-working spaces for the hybrid era, and dedicated sports zones? In a self-sustained hub like Yelahanka, your community amenities become your daily lifestyle.</p>
+                    <p class="step-description">Look beyond the standard swimming pool. Does the project have a fully equipped clubhouse, co-working spaces for the hybrid era, and dedicated sports zones? In a self-sustaining hub like Yelahanka, your community amenities become your daily lifestyle.</p>
                     <div class="step-highlight">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                             <circle cx="12" cy="7" r="4"/>
                         </svg>
-                        Amenities become your daily lifestyle
+                        AMENITIES BECOME YOUR DAILY LIFESTYLE
                     </div>
                 </div>
 
@@ -823,7 +839,7 @@
                                 <polyline points="10 9 9 9 8 9"/>
                             </svg>
                         </div>
-                        <div class="step-title">Keep Your Documents & Finances Ready</div>
+                        <div class="step-title">KEEP YOUR DOCUMENTS & FINANCES READY</div>
                     </div>
                     <p class="step-description">Before you book, ensure your financial health is in order. Keep your PAN card, Aadhaar, and a cancelled cheque ready. Remember, tax benefits under Section 24 and 80C only apply if possession is taken within the stipulated time, so plan your finances with a clear budget in mind.</p>
                     <div class="step-highlight">
@@ -833,7 +849,7 @@
                             <line x1="8" y1="2" x2="8" y2="6"/>
                             <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
-                        Tax benefits under Section 24 & 80C
+                        TAX BENEFITS UNDER SECTION 24 & 80C
                     </div>
                 </div>
 
